@@ -6,11 +6,11 @@ export default function Login() {
 
     const navigate = useNavigate();
 
-    const [userLogin, setUserLogin] = useState({userName: '', passWord: ''})
+    const [userLogin, setUserLogin] = useState({ userName: '', passWord: '' })
 
     console.log(userLogin)
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setUserLogin({
             ...userLogin,
             [name]: value
@@ -19,10 +19,12 @@ export default function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault(); //Prevent reload browser
-        if(userLogin.userName === 'cyberlearn' && userLogin.passWord ==='cyberlearn') {
-            // history.push('/');
-            navigate('home', {replace: false});
-        }else {
+        if (userLogin.userName === 'cyberlearn' && userLogin.passWord === 'cyberlearn') {
+            // history.push('/'); //go to main page
+            // navigate('home', {replace: false}); //go to home page
+            navigate(-1) //goBack to the page before login
+            localStorage.setItem('userLogin', JSON.stringify(userLogin));
+        } else {
             alert('Login fail !')
             return;
         }
@@ -33,14 +35,14 @@ export default function Login() {
             <h3 className="display-4">Login</h3>
             <div className="form-group">
                 <p>Username</p>
-                <input name="userName" className="form-control" onChange={handleChange}/>
+                <input name="userName" className="form-control" onChange={handleChange} />
             </div>
             <div className="form-group">
                 <p>Password</p>
-                <input name="passWord" className="form-control" onChange={handleChange}/>
+                <input name="passWord" className="form-control" onChange={handleChange} />
             </div>
             <div className="form-group">
-               <button className="btn btn-success">Login</button>
+                <button className="btn btn-success">Login</button>
             </div>
         </form>
     )

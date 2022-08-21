@@ -40,6 +40,14 @@ export default function Header() {
                                 Login
                         </NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink 
+                            className={({ isActive }) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} 
+                            style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} 
+                            to="/profile">
+                                Profile
+                        </NavLink>
+                    </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="text" placeholder="Search" />
