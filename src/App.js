@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
@@ -30,7 +30,6 @@ function App() {
          
           <Route path='*' element={<Navigate to='/home' />} />
           {/* <Route path='*' element={<PageNotFound />} /> */}
-
         </Route>
       </Routes>
     </HistoryRouter>
