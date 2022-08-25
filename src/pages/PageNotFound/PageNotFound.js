@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function PageNotFound() {
+export default function PageNotFound(props) {
   return (
-    <div>PageNotFound</div>
+    <div>PageNotFound {props.match.url}</div>
   )
 }

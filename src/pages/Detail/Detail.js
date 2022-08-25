@@ -1,15 +1,12 @@
 import React from 'react'
-import { useMatch } from 'react-router-dom'
 
-export default function Detail() {
-
-    const match = useMatch("/detail/:id");
+export default function Detail(props) {
 
     return (  
         <div>
-            Value of id parameter: {match.params.id}
+            Value of id parameter: {props.match.params.id}
             <br/>
-            Current Pathname: {match.pathname}
+            Current Pathname: {props.match.pathname}
         </div>
     )
 }
