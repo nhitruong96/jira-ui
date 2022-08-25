@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './Header.css'
 
 export default function Header() {
     return (
@@ -9,44 +10,19 @@ export default function Header() {
             <div className="collapse navbar-collapse" id="collapsibleNavId">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item">
-                        <NavLink 
-                            className={({ isActive }) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} 
-                            style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} 
-                            to="/home">
-                                Home
-                        </NavLink>
+                        <NavLink activeClassName="activeNavItem" activeStyle={{ fontWeight: 'bold' }} className="nav-link" to="/home">Home </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink 
-                            className={({ isActive }) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} 
-                            style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} 
-                            to="/about">
-                                About
-                        </NavLink>
+                        <NavLink activeClassName="activeNavItem" activeStyle={{ fontWeight: 'bold' }} className="nav-link" to="/about">About</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink 
-                            className={({ isActive }) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} 
-                            style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} 
-                            to="/contact">
-                                Contact
-                        </NavLink>
+                    <li className="nav-item dropdown">
+                        <NavLink activeClassName="activeNavItem" activeStyle={{ fontWeight: 'bold' }} className="nav-link" to="/contact">Contact</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink 
-                            className={({ isActive }) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} 
-                            style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} 
-                            to="/login">
-                                Login
-                        </NavLink>
+                    <li className="nav-item dropdown">
+                        <NavLink activeClassName="activeNavItem" activeStyle={{ fontWeight: 'bold' }} className="nav-link" to="/login">Login</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink 
-                            className={({ isActive }) => isActive ? 'nav-link bg-light text-dark' : 'nav-link'} 
-                            style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} 
-                            to="/profile">
-                                Profile
-                        </NavLink>
+                    <li className="nav-item dropdown">
+                        <NavLink activeClassName="activeNavItem" activeStyle={{ fontWeight: 'bold' }} className="nav-link" to="/profile">Profile</NavLink>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
